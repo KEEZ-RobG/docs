@@ -103,12 +103,9 @@ NOTE: Make sure you also forward those ports in your router.
 
 ## VALIDATOR
 
-### Can we confirm 1 validator = 32 LYX on mainnet?
+### What is the minimum deposit for a validator?
 
-The final staking amount will be based in LYXe price and likely shortly before
-mainnet. It will very likely not be 32 LYX. As the amount must be high enough
-to incentivise good validator behaviour. If it cost to little the network 
-becomes insecure.
+The minimum deposit amount has not been announced. It must be high enough to incentivize validators to maintain their nodes, and a low cost can put the security and stability of the network at risk. A decision will be made prior to mainnet launch.
 
 ### When will it be possible to withdraw your LYX from your validator and how?
 
@@ -119,7 +116,7 @@ stated we might propose our own one.
 
 ### Is there a minimum of validators you need to run?
 
-No, you can run as many as you want and you can run only just one validator.
+No, it is only required that you run one.
 
 ### Is there a maximum limit on how many validators one node can run, regarding decentralization?
 
