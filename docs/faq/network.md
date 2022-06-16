@@ -54,7 +54,7 @@ There will likely be staking pools, though this reduces decentralization and rem
 
 ### Is LUKSO going to implement the EIP-1559 standard?
 
-[EIP-1559](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1559.md) is tenativly planned. A finally decision will be made before mainnet launch.
+[EIP-1559](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1559.md) is planned. A finally decision will be made before mainnet launch.
 
 ## NODE
 
@@ -65,27 +65,18 @@ There are no extra rewards for being very quick. A validator has exactly 6 secon
 1. The validator's chain is not synced with the canonical head. 
 2. The validator needed more than 6 seconds to propose the block. 
 
-### How to setup my node to maximize my peers?
+### How do I maximize peers on my node?
 
-In the normal case a node will connect to max peers. 
-But each peer has an evaluation step that will judge 
-if the node is "worthy" otherwise it will say "goodbye". 
-You can check the logs to see if you get many of the goodbye messages.
+There are settings in the node configuration to maximize peers, but more peers increase bandwidth usage and do not necessarily lead to benefits.
 
-Max peers can be configured in the configuration of your node, but more peers
-increase bandwidth and do not necessarily lead to benefits.
+Normally, a node will connect to max peers, but each peer has an evaluation step that will judge if the node is "worthy." Otherwise, it will say "goodbye." You can check the logs for goodbye messages.
 
-### Why is there a difference between my peers on the execution stats and consensus stats website?
+### Why are my peers on the execution and consensus stats websites different?
 
-With the Bellatrix fork Geth must follow the beacon chain. 
-It will sync up by itself only to the final epoch. 
+With the Bellatrix fork, Geth must follow the beacon chain, and it will sync by itself only to the final epoch. This means it is not necessarily 
+important how many peers the execution node has after reaching finality.
 
-It means that once finality is reached it is not necessarily 
-important how many peers the execution node has. 
-The peers in execution and consensus are also not necesseraly 
-the same. There is no mechanism where the consensus is 
-telling the execution node which peers it is connected to 
-and vice versa.
+Also, there is no mechanism linking consensus peers and execution node peers—they are not necessarily the same.
 
 ### What ports must be open on a node?
 
