@@ -10,68 +10,60 @@ sidebar_position: 3
 
 ### When will the LUKSO Mainnet be launched?
 
-The current launch date is planned for 2022. You can find the latest update in our [Medium article](https://medium.com/lukso/an-update-on-the-road-to-mainnet-48d39ce411d7).
+2022 is the planned launch date. You can find the latest update in our [Medium article](https://medium.com/lukso/an-update-on-the-road-to-mainnet-48d39ce411d7).
 
 ### I found a bug. Where can I report it?
 
-You can create a GitHub issue in the related project's repository. If you can't do it, you can send us a message on our [Discord](https://discord.gg/lukso) server.
+If you can, create a GitHub issue in the related project's repository. Otherwise, please send us a message on our [Discord](https://discord.gg/lukso) server.
 
 ## NETWORK
 
 ### What are the expected block and epoch times?
 
-L16 will run with 6s per slot. Each epoch contains 32 slots.
-For Mainnet we didn't decide the values yet.
+L16 will run at 6s per slot, and each epoch will contain 32 slots.
+We are currently determining values for mainnet.
 
 ### What is the expected tx/second?
 
-L16 will start with 60-80M GAS limit. hardware should still be fine with 8-16GB and 4 core CPU
+L16 will start with a 60-80M GAS limit, allowing node machines with 4 cores and 8-16 GB RAM to work well.
 
 ### Are there any changes on the LUKSO network compared to Ethereum 2.0? What are those changes?
 
-We would like to stay as compatible as possible with Eth2.0. Don't 
-expect a lot of differences in the consensus engine for now. Our RnD 
-in the future:
+We want to maximize ETH2 compatibility. For now, we expect the consensus engines to remain similar. Our future research and development will include
 
 1. withdraw functionality
 2. sharding
 3. data availability
 
-### Will other clients be supported besides geth (in the same way as Ethereum)?
+### Which execution and consensus clients are available for LUKSO?
 
-One of the advantages of staying close to Eth2.0 is that we are compatible with
-all clients. Currently we are running on beacon side a Lighthouse Client and will 
-expand to Teku in the near future. Ideally we will be compatible with all clients.
+Currenty we use Geth for execution and Prysm for consensus.
 
-### What is LUKSO’s vision regarding the network? Will LUKSO keep following the Ethereum network updates or eventually split and follow its own path again after mainnet with the Pandora/Vanguard/Orchestrator clients?
+### Ethereum supports multiple clients. Will LUKSO support other clients in the future?
 
-There could be changes in the future, but it is always a balance between 
-having its own ideas executed and deviating from Eth2.0. 
-Our efforts after mainnet launch will be decided based in the development direction of Eth2.0
+The potential to be compatible with all clients is one advantage of staying close to ETH2 development. Currently, we are testing Lighthouse and will expand to Teku soon. Ideally, we will be compatible with all clients.
+
+### Will Lukso continue to follow Ethereum updates, or will future development have a novel approach, like the Pandora/Vanguard/Orchestrator clients?
+
+There could be changes after mainnet, and Ethereum's developmental direction will dictate how much we need to deviate and execute our own unique ideas. Regardless, it will be a balancing act between maintaining compatibility with Ethereum and providing functionality specific to LUKSO's vision.
 
 ### Can I stake my tokens without being a validator?
 
-The staking is setup in a way that you need to run a validator node. 
-There will likely be staking pools, pools though reduce decentralisation and are not ideal for a highly decentralised network.
+LUKSO uses a proof-of-stake (PoS) consensus mechanism, which requires the operation of a node for staking.
+There will likely be staking pools, though this reduces decentralization and remove the option to maintain custody of your private keys, which is not ideal for a highly decentralized network.
 
 ### Is LUKSO going to implement the EIP-1559 standard?
 
-[EIP-1559](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1559.md) is planned, but will be finally decided before mainnet launch.
+[EIP-1559](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1559.md) is tenativly planned. A finally decision will be made before mainnet launch.
 
 ## NODE
 
 ### Will lower latency positively influence my rewards?
 
+There are no extra rewards for being very quick. A validator has exactly 6 seconds to vote on a proposed block. Two scenarios can cause a validator to miss that slot: 
 
-When the appointed time for a validator 
-comes to propose a block the validator has exactly 6s 
-to vote. 2 scenarios are causing a validator to miss that 
-slot: 
-
-1. its chain is not synced up to the canonical head. 
-2. the validator needed more than 6s to propose the block. 
-
-There are no extra rewards for being very quick...
+1. The validator's chain is not synced with the canonical head. 
+2. The validator needed more than 6 seconds to propose the block. 
 
 ### How to setup my node to maximize my peers?
 
