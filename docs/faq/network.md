@@ -105,27 +105,27 @@ NOTE: Make sure you also forward those ports in your router.
 
 ### What is the minimum deposit for a validator?
 
-The minimum deposit amount has not been announced. It must be high enough to incentivize validators to maintain their nodes, and a low cost can put the security and stability of the network at risk. A decision will be made prior to mainnet launch.
+The minimum deposit amount has not been announced. It must be high enough to incentivize validators to maintain their nodes. If the cost is too low, the security and stability of the network at risk. A final decision will be made prior to mainnet launch.
 
-### When will it be possible to withdraw your LYX from your validator and how?
+### When will it be possible to withdraw LYX from my validator?
 
-Eth2.0 planned the withdraw functionality with phase 1. 
-We are observing this topic very closely. Ideally
-we are satisfied with the solution. But as already 
-stated we might propose our own one.
+There is not a set date yet. We are following Ethereum's development of this functionality, which they plan to release with Phase 1. Ideally, we will implement the same function,  but if we are unsatisfied with their solution, we might propose our own.
 
-### Is there a minimum of validators you need to run?
+### Can I start extra validators with the rewards from my validator(s)?
+
+Not until the withdraw function is implemented.
+
+### Can you explain the process for withdrawing and selling rewards, while still keeping the validator running?
+
+These details will be made availabel when the withdrawl function is fully developed.
+
+### Is there a minimum number validators you need to run on a node?
 
 No, it is only required that you run one.
 
-### Is there a maximum limit on how many validators one node can run, regarding decentralization?
+### Is there a maximum number of validators you can run on a node?
 
-It is not given exactly. We were running a node with 60 
-validators. Next to block proposals the validator node has 
-additonal duties like voting on a block. It might get quite 
-crowded on one slot. But it also depends on the size of 
-the validators in total. If there are many validators out 
-there the duties might be very low for a node.
+There is not an exact maximum. In addition to proposing blocks, validator nodes have additional duties, like voting on blocks. With many validators on one node, it could get quite crowded on one slot. The demand placed on individual validators also depends on the total number of validators running on the network. If there are many, duties might be very low for individual nodes.
 
 ### Is there an advantage to splitting validators across multiple nodes instead of running all validators on one node?
 
@@ -136,17 +136,9 @@ a lot of factors: Price per node. Total Validator Density.
 It can be reasonable to run 200 validators in one node but 
 we don't recommend it.
 
-### Do you receive higher returns If you deposit more than 32 LYX in a validator?
+### Do you receive a higher return if you deposit more than the minimum balance in a validator?
 
-No. 
-
-### Can I start extra validators with the rewards I'm getting on my validator balance?
-
-This goes back to the question if withdraw is implemented.
-
-### Can you explain the process for withdrawing and selling rewards, while still keeping the validator running?
-
-Right now this is not available.
+No.
 
 ### How should the logs look in each case to have certainty everything runs smoothly?
 
@@ -157,7 +149,7 @@ for different warnings and errors in the future. But ideally the
 logs can be omitted - other tools should provide visibility 
 (Grafana,Explorers,...)
 
-### Is it possible to check if your validator is running correctly and what the rewards are without using Grafana/Prometheus?
+### Is it possible to check if my validator is running correctly and what the rewards are without using Grafana/Prometheus?
 
 You can use the CLI. We are improving the command:
 
