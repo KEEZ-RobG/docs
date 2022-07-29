@@ -3,6 +3,9 @@ title: Run a node
 sidebar_position: 2
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Run a node
 
 ## System Requirements
@@ -27,11 +30,14 @@ Apple's new M1 chips are not supported natively by our node client. However, you
 | 13000 | TCP      | beacon syncing   | port must be open |
 | 12000 | UDP      | beacon discovery | port must be open |
 
-## Linux System Setup
+## System Setup
 
-_For instructions on setting up a Mac, proceed to the [MacOS System Setup](#macos-system-setup) section._
+<Tabs>
+  <TabItem value="linux" label="Linux">
 
-### Configure Firewall
+
+
+#### 1. Configure Firewall
 
 Deny all incoming traffic by default
 
@@ -57,7 +63,7 @@ sudo ufw allow [replace_with_your_ssh_port]/tcp/udp
 
 This can be useful for setting up you ssh connection or monitoring.
 
-Enable firewall
+#### 2. Enable firewall
 
 ```sh
 sudo ufw enable
@@ -71,27 +77,27 @@ NOTE: Make sure also to configure your router to forward these ports.
 
 You may follow this community-authored [Port Forwarding](https://github.com/KEEZ-RobG/node-guide/blob/main/PortForward.md) guide.
 
-### Install Dependencies
+#### 3. Install Dependencies
 
 1. [curl](https://curl.se/)
 2. [Docker](https://docs.docker.com/get-docker/)
 3. [Docker Compose](https://docs.docker.com/compose/)
 
-#### Install curl
+Install curl
 
 ```sh
 sudo apt-get -y update
 sudo apt-get -y install curl
 ```
 
-#### Install Docker
+Install Docker
 
 ```sh
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
 ```
 
-#### Install Docker Compose
+Install Docker Compose
 
 ```sh
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
@@ -99,10 +105,10 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 docker-compose --version
 ```
+  </TabItem>
+  <TabItem value="mac" label="macOS">
 
-## MacOS System Setup
-
-### Configure Firewall
+#### 1. Configure Firewall
 
 This section is in the works
 
@@ -112,25 +118,25 @@ This section is in the works
 
 :::
 
-### Install Dependencies
+#### 2. Install Dependencies
 
 1. [Homebrew package manager](https://brew.sh)
 2. [curl](https://macappstore.org/curl/)
 3. [Docker Desktop for Mac](https://docs.docker.com/desktop/mac/install/)
 
-#### Install Homebrew
+Install Homebrew
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-#### Install Curl
+Install Curl
 
 ```sh
 brew install curl
 ```
 
-#### Install Docker Desktop for Mac
+Install Docker Desktop for Mac
 
 Go to https://docs.docker.com/desktop/mac/install/ and install the application.
 You do not have to install Docker Compose separately.
@@ -138,7 +144,10 @@ You do not have to install Docker Compose separately.
 :::info
 Open the Docker Desktop application after installing from the applications folder on your Mac
 :::
-
+  </TabItem>
+</Tabs>
+    
+    
 ## Install the LUKSO Command Line Interface (CLI)
 
 Create a directory:
